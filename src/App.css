@@ -40,6 +40,10 @@ main{
   cursor: pointer;
 }
 
+/* ########## meme image styling ############# */
+.memeImg{
+ max-width: 100%;
+}
 
 
 

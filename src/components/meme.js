@@ -4,12 +4,14 @@ import "../memesdata";
 import memesdata from "../memesdata";
 export default function Meme(){
     
+  const[memeurl , setmeme]= React.useState("https://i.imgflip.com/30b1gx.jpg");
     function handlesubmit(){
         let arr = memesdata.data.memes;
         let randNum = Math.floor(Math.random()* arr.length);
+        setmeme(arr[randNum].url);
         console.log(arr[randNum].url);
+
     }
-    
     
     return (
       <main>
@@ -25,7 +27,11 @@ export default function Meme(){
           />
           <br></br>
 
-          <button className="submit-btn" onClick={handlesubmit}>Get new Meme Image 👻</button>
+          <button className="submit-btn" 
+          onClick={handlesubmit}>
+            Get new Meme Image 👻</button>
+          
+          <img src={memeurl} className="memeImg"/>
         </div>
       </main>
     );
